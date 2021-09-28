@@ -1,0 +1,336 @@
+<krpano>
+
+
+	<css_slaider path="add_hotspot/plugins_l/editor/css/style.css" />
+	
+	<!-- Action connection -->
+	<include url="plugin_a/actiontHS.xml"/> 
+	
+	<!-- Sound -->
+	<plugin name="soundADHS" url.html5="%VIEWER%/plugins/soundinterface.js"
+        preload="true" rootpath="" volume="1.0" mute="false" panningmodel="simple"
+        worldscale="1.0" autopause="true" autounlock="true"
+	/>
+	
+	<!-- the style pop-up text when you hover your mouse over the link . Текст при наведении мыши-->
+	<textstyle name="STYLE1_LinkSM"
+	           font="Arial" fontsize.no-mobile="18" fontsize.mobile="16" bold="false" italic="false" xoffset="0" yoffset="-20"
+	           background="true" backgroundcolor="0x006868" backgroundalpha="0.9"
+	           border="false" borderwidth="0" bordercolor="0xFFFFFF" roundedge="3"
+	           textcolor="0xFFFFFF"
+	           padding="4 5"
+	           textalign="center" textshadowrange="2"   
+			   textshadow ="3"
+	           />	
+			   
+	<textstyle name="STYLE1_LinkSM2"
+	           font="Arial" fontsize.no-mobile="17" bold="false" italic="false" xoffset="0" yoffset="-20"
+	           background="true" backgroundcolor="0x006868" backgroundalpha="0.8"
+	           border="false" borderwidth="0" bordercolor="0xFFFFFF" roundedge="3"
+	           textcolor="0xFFFFFF"
+	           padding="4 5" textshadow ="3" textshadowrange="2"  
+	           textalign="center"           
+	           />
+			   
+	<!-- Стиль подписи фото -->         		   
+	<style name="tit_ph_styl_adhs" enabled="false" type="text" css="font-family:Comic Sans MS, Comic Sans, cursive, Arial; color:#FFFFFF; font-size:20px; text-align:center " 
+		    x="0" y="0"  padding="7 10" keep="true" align="top" edge="top" zorder="52" alpha="0" width="100%" 
+			background="true" backgroundcolor="0x000000" backgroundalpha="0.3"			   
+			border="false" bordercolor="0xFFFFFF" borderalpha="0" borderwidth="0"	roundedge="0"    
+			shadow="5.0"  shadowrange="3.0"  shadowangle="90"  shadowcolor="0x000000"  shadowalpha="0"
+			textshadow="0.0" textshadowrange="4.0" textshadowangle="45" textshadowcolor="0x000000" textshadowalpha="1.0"
+			wordwrap="true" 
+		  />
+			   			
+	<!-- Фон  -->
+	<style name="freim_bg_Adhs" type="container" alpha="0" keep="true" align="lefttop"  width="100%" height="100%" zorder="50" safearea="false"
+		   bgcolor="0x000000"  bgalpha="0.7" bgcapture="true" handcursor="false" onclick.addevent="set(autorotate.enabled, true);" />
+		   
+	<!-- Палец громкости  -->
+	<layer name="volume_finger"  keep="true" url="picture/volume_finger.png" align="right" x="15"  y="0" scale="0.5" enabled="false" alpha="0" zorder="51" /> 	
+
+	<!-- Стиль хотспотов --> 
+    <style	name="link_hs_sm" type="image" keep="true" width="100" height="prop" visible="false" enabled="false"  zorder="5" depth="1000"  />	
+
+	<!-- Стиль текстового хотспота   add hotspot. krpano.  --> 
+    <style	name="text_hs_sm" html="Text" keep="true" capture="true" visible="false" enabled="false" edge="lefttop" 
+			width="" height="" alpha="1" scale="1"  zorder="6" padding="5 5 5 5"
+			css="font-family:Arial; font-size:16px; color:#FFFFFF; text-align:center;"  txtshadow="0 0 0 0х000000 0.5"
+			bgcolor="0x777777" bgalpha="0.5"  bgborder="1 0xFFFFFF 1" bgroundedge="0 0 0 0"  bgshadow="0 0 0 0х000000 0.5"
+			vcenter="true" oversampling="2.0"
+		/>	
+
+	
+	<!-- Стиль хотспота открытия фотографии в режиме VR --> 
+    <style name="StPhotADHS" type="image" keep="true" width="0" height="prop"  zorder="5" depth="1000"  alpha="1" edge="center" 
+				VRwidth="900" onout="tween(width,0,0.5,easeinquart, removehotspot(photADHS));"  />
+
+	<!-- Стиль видео в режиме VR -->
+    <style	name="StVideoADHS" url.html5="%FIRSTXML%/plugins/videoplayer.js"  capture="true"  zorder="5" edge="center"
+			width="0" VRwidth="900" height="prop"  posterurl=""
+			onout="tween(width,0,0.5,easeinquart, removehotspot(VideoADHS));"
+			pausedonstart="false" 
+		/>
+
+	
+	<!-- ////////////////////   Buttons   ////////////////////////////// -->	 	
+	
+	<!-- Close photo button. Кнопка закрыть фотографию -->	   
+	<layer name="close6_photo"  keep="true" align="righttop" x="25"  y="22" url="picture/close.png" zorder="51" 
+	        width="20" height="prop" alpha="0" edge="center" visible="true" bgcapture="true" handcursor="true"
+	        onover="tween(width,25,0.2);" onout="tween(width,20,0.2);" onclick="delayedcall(0.3,close_photo_add_hs();); tween(alpha,0); set(enabled,false);"/>
+	<!-- Close youtube  закрыть youtube  -->	   
+	<layer name="close8_youtube"  keep="true" align="righttop" x="23"  y="23" url="picture/close.png" zorder="51" 
+	        width="20" height="prop" alpha="0" edge="center" visible="true" bgcapture="true" handcursor="true"
+	        onover="tween(width,25,0.2);" onout="tween(width,20,0.2);" onclick="delayedcall(0.3,youtubeplayer_close();); tween(alpha,0); set(enabled,false);" />
+	<!-- Close video   Кнопка закрыть видео-->	   
+	<layer name="close7"  keep="true" align="righttop" x="23"  y="23" url="picture/close.png" zorder="56" 
+	        width="20" height="prop" alpha="0" edge="center" visible="true" bgcapture="true" handcursor="true"
+	        onover="tween(width,25,0.2);" onout="tween(width,20,0.2);" onclick="delayedcall(0.3,videoplayer_close();); tween(alpha,0); set(enabled,false);" />
+	<!-- play video    Кнопка плей видео -->	   
+	<layer name="play_vid_icon"  keep="true" align="center"  url="picture/media_playback_start.png"
+			zorder="100" enabled="false" visible="false" scale="0.7"
+	        width="100" height="prop" alpha="0" edge="center" bgcapture="false" handcursor="false" />
+	<!-- close_freim_url   Кнопка закрыть -->	   
+	<layer name="close_freim_url_addhs"  keep="true" align="righttop" x="35"  y="23" url="picture/close.png" zorder="51" 
+	        width="20" height="prop" alpha="1" edge="center" visible="false" bgcapture="true" handcursor="true" onclick="" />		
+		
+	
+
+<!-- ////////////////////////////            youtube               ///////////////////////////////// -->
+<youtubeplayer_settings
+		maxsize="0.80"
+		parameters="autoplay=1&amp;autohide=1&amp;controls=1&amp;loop=0&amp;modestbranding=0&amp;rel=0&amp;showinfo=0&amp;hd=1&amp;vq=hd720"
+		/>
+	<!--
+		youtubeplayer_settings
+		o maxsize
+			- set the max. size of the screen-size (0.80 = 80%, 1.0 = 100%)
+			-в зависимости от доступного пространства будет использоваться ширина экрана или высота
+
+		o parameters
+			- tПараметры встраивания на YouTube
+			- смотрите здесь для документации всех доступных параметров:
+				https://developers.google.com/youtube/player_parameters#Parameters
+			-например установить элементы управления = 0, чтобы удалить элемент управления YouTube по умолчанию
+	-->
+	
+	
+		
+	<!-- ////////////////////////////////////////            БЛОК ФРЕЙМ HTML                /////////////////////////////////////////////////////////////////////// -->
+	
+	<!-- Плагин блюр  -->
+	<!-- <plugin name="pp_blur" keep="true" url="%VIEWER%/plugins/pp_blur.js" enabled="true" range="0.0" linearrgb="false" zorder="50" order="1" phase="2" /> -->
+	
+	<!-- Фоновый слой  -->
+	<layer name="pp_blur2" type="container" keep="true" width="100%" height="100%" enabled="false" bgcapture="true" handcursor="false" zorder="5"
+			  onclick="	set(enabled, false);
+							set(events[popup].name, null);
+							tween(plugin[pp_blur].range, 0.0);
+							tween(layer[popup].alpha, 0.0, 0.25, default, removelayer(popup, true); );
+							scope(private:POPUP, delete(popup); );  " 
+		/>
+	<!-- Окно под инфо html  -->
+	<style name="frame_html" type="container" alpha="0" keep="true" align="center"  width="90%" height="90%" align.mobile="center" 
+			  width.mobile="100%" height.mobile="100%"
+		      padding="0"  zorder="52"  bgroundedge="2"
+			  bgborder="0 0xFFFFFF 1" bgcolor="0xe7dec7"  bgalpha="0" 
+		/>
+
+	<!-- Крестик закрыть HTML  -->	 
+	<style name="close_freim_url"  keep="true"  align="righttop" edge="center" width="20" width.mobile="15" height="prop"  x="35"  y="20" zorder="7"
+			  url="picture/close.png"  bgcapture="false" handcursor="true" parent="popup" 
+			  onover="set(scale,1.2);" onout="set(scale,1.0);" onclick="callwith(layer[pp_blur2],onclick);"
+		/>
+	
+
+	<!-- открыть фотографию  -->	
+	<photSM  height="80%"
+			 width="prop" 
+			 bgcolor=""
+			 onclick="close_photo_add_hs();"
+			 widthmin="300" 
+		/>
+
+	 <!-- ////////////////////////        БЛОК ФРЕЙМ HTML    ///////////////////////////////////// -->
+	
+
+	<!-- Инфо HTML (расширенные настройки ) -->
+	<style name="frame_html2" alpha="1" keep="true" align="righttop"  width="50%" height="100%"   zorder="52" url="textfield.swf" interactivecontent="true" 
+		   bgborder="0 0xFFFFFF 0" bgcolor="0x000000"  bgalpha="0.5" />	
+		   
+	<!-- Закрыть кнопку назад, что бы не перезагруало сцену и просто закрывало окно -->
+	<action name="zakryty_nazad">
+			callwith(layer[close_freim_url_addhs], onclick); 
+			set(layer[nazad].alpha, 0);
+			set(layer[nazad].enabled, false);
+	</action>	
+	
+	<!-- Окно HTML  https://krpano.com/forum/wbb/index.php?page=Thread&postID=70787#post70787 
+				iframe_add_hotspot(IFRAME_HTML, TARGET_LAYER_NAME,https://krpano.com/forum/);		-->
+	<action name="iframe_add_hotspot">
+	if(webvr.isenabled,,
+		addlayer(freim_bg_Adhs);
+		layer[freim_bg_Adhs].loadstyle(freim_bg_Adhs);
+		set(layer[freim_bg_Adhs].onclick, callwith(layer[close_freim_url_addhs], onclick); );
+		tween(layer[freim_bg_Adhs].alpha, 1);
+		set(layer[fon_zad_plan_adhs].enabled, true);
+		tween(layer[fon_zad_plan_adhs].alpha, 1);
+		set(closA,%1);
+		removelayer(%1);
+		addlayer(%1);
+		layer[%1].loadstyle(frame_html);
+		<!-- set(layer[%1].parent, %2); -->
+		set(layer[close_freim_url_addhs].parent, %1);
+		set(layer[close_freim_url_addhs].onclick, 	set(visible,false);
+									tween(layer[%1].alpha, 0); 
+									tween(layer[freim_bg_Adhs].alpha, 0);
+									set(layer[fon_zad_plan_adhs].enabled, false);
+									tween(layer[fon_zad_plan_adhs].alpha, 0);
+									delayedcall(0.3, removelayer(%1); removelayer(freim_bg_Adhs););
+			);
+		set(layer[close_freim_url_addhs].visible, true);
+		tween(layer[%1].alpha, 1);
+		if(device.html5,
+	      if(device.ios,	<!-- Если ios, то добавить код для слоя прокрутки в iframecode  -->
+				set(iPad_hs1,'[div style="position:absolute; right:0; bottom:0; left:0; top:0; overflow-y: scroll; -webkit-overflow-scrolling:touch;"]');<!-- Если ios   -->
+				set(iPad_hs2,'[/div]'); <!-- Если ios    -->
+				,
+				set(iPad_hs1,'');
+				set(iPad_hs2,'');
+			 );
+			txtadd(iframecode,get(iPad_hs1),'[iframe  id="krpano_iframe_'
+						  ,%1,'" width="100%" height="100%" allowtransparency="true" src="',%3,'" frameborder="0" allow-same-origin allowfullscreen][/iframe]',get(iPad_hs2));
+					copy(layer[%1].html, iframecode);
+					set(layer[%1].padding, 0);
+					set(layer[%1].url, 'textfield.swf');
+					set(layer[%1].interactivecontent, true);
+					set(layer[%1].onloaded, iframe_resize(%1); );
+					,
+					showlog();
+					trace(error,'Iframe is not working in flash mode!');
+			);
+		);
+	</action>	
+	
+	<action name="iframe_resize" type="Javascript" devices="html5"><![CDATA[
+			document.querySelector("#krpano_iframe_"+args[1]).parentNode.style.height="100%";]]>
+	</action>	
+	
+	
+	
+	
+	
+
+	<!-- ///////////////////    popup   БЛОК ФРЕЙМ HTML   ///////////////////////// -->
+
+	<!-- Контейнер под HTML  -->	 
+	<style name="infospot" keep="true"	type="container" align="center" alpha="0" capture="true"  handcursor="false" maskchildren="true" zorder="6"
+			  bgborder="1 0xFFFFFF 1"  bgcolor="0x555555" bgalpha="0.7" bgshadow="0 10 20 0x000000 0.5" bgcapture="true" 
+			  onloaded="add_html_code(get(datacontent),true);"
+		/>
+		
+<!-- 	openFrame(iframe,'https://krpano.com/forum/',1200,900, true );  openFrame(html,get(data[data_html].content),1200,900, true);    -->
+<action name="openFrame" scope="private:POPUP" args="type,content,width,height, scrollbars"><![CDATA[
+		set(global.layer[pp_blur2].enabled, true);
+		if(popup, break(); );
+		addlayer('popup', popup);
+		popup.loadstyle(infospot);
+		set(popup, type=container, width=calc(min(width,global.stagewidth*0.85)), height=calc(min(height,global.stageheight*0.8)); );
+		
+		addlayer('close_freim_url',close_freim_url);
+		close_freim_url.loadstyle(close_freim_url);
+		
+		if(type == 'html', 	copy(popup.datacontent, content);
+									calc(popup.onloaded, 'add_html_code(get(datacontent),'+scrollbars+');');
+
+		  ,type == 'iframe', 	calc(popup.datacontent, '<iframe style="position:absolute;width:100%;height:100%;top:0px;left:0px;" 
+																		src="'+content+'" frameborder="0" allowfullscreen></iframe>');
+									calc(popup.onloaded, 'add_html_code(get(datacontent),'+scrollbars+');');
+		  ,type == 'image', set(popup, bgcolor=0xFFFFFF, bgalpha=1, );
+			addlayer("popup_image", img);
+			set(img, url=get(content), align=center, width=-20, height=-20, parent=get(popup.name), onloaded='popup_imageloaded()'  );
+
+		 );		
+		
+		tween(global.plugin[pp_blur].range, 40.0);
+		delayedcall(0.4, tween(global.layer[popup].alpha, 1.0); );
+
+	]]></action>
+	
+
+			
+	<action name="popup_imageloaded" scope="private:POPUP">
+		calc(imgw, caller.imagewidth + 20);
+		calc(imgh, caller.imageheight + 20);
+		calc(maxw, global.stagewidth*0.9);
+		calc(maxh, global.stageheight*0.8);
+		if(imgw GT maxw,
+			calc(imgh, round(imgh * maxw / imgw));
+			copy(imgw, maxw);
+		);
+		if(imgh GT maxh,
+			calc(imgw, round(imgw * maxh / imgh));
+			copy(imgh, maxh);
+		);
+
+		set(global.layer[get(caller.parent)], width=get(imgw), height=get(imgh) );
+	</action>
+	
+	
+
+<!-- arguments: 1=htmlcode, 2=scrollbars -->
+	<action name="add_html_code" type="Javascript"><![CDATA[
+		var div = document.createElement("div");
+
+		// basic styles to fit into the layer size and allow scrolling:
+		div.style.width = "100%";
+		div.style.height = "100%";
+		div.style.boxSizing = "border-box";
+		div.style.overflow = args[2] == "true" ? "auto" : "hidden";
+
+		// allow text selection (optional):
+		div.style.webkitUserSelect =
+		div.style.MozUserSelect =
+		div.style.msUserSelect =
+		div.style.userSelect = "text";
+
+		function stopPropagation(e){ e.stopPropagation(); }
+		function preventDefault(e){ e.preventDefault(); }
+
+		// enable browsed-based mouse-wheel and touch-scrolling support:
+		div.addEventListener("wheel", stopPropagation, true);
+		div.addEventListener("mousewheel", stopPropagation, true);
+		div.addEventListener("DOMMouseScroll", stopPropagation, true);
+		div.addEventListener("touchstart", function(event){ if(krpano.device.ios && window.innerHeight == krpano.display.htmltarget.offsetHeight){ /* avoid the iOS 'overscrolling' for fullpage viewers */ var bs = document.body.parentNode.style; bs.position="fixed"; bs.top=0; bs.left=0; bs.right=0; bs.bottom=0; } krpano.control.preventTouchEvents = false; event.stopPropagation(); }, true);
+		div.addEventListener("touchend", function(event){ krpano.control.preventTouchEvents = true; event.stopPropagation(); }, true);
+		div.addEventListener("gesturestart", preventDefault, true);
+
+		// add the html code:
+		div.innerHTML = args[1];
+
+		// add the div to the layer element:
+		caller.sprite.appendChild(div);
+	]]></action>
+	
+	
+	
+	<action name="dollhouse_on_adhs">
+		tween(view.oz, 1500);
+		set(control.invert,false);
+	</action>
+	
+	
+	
+	<action name="dollhouse_off_adhs">
+		tween(view.oz, 0.0);
+		set(control.invert,false);
+	</action>
+
+	<!-- Показать текст при наведении  -->
+    <action name="showtit">
+			 showtext(get(hotspot[get(name)].title), STYLE1_LinkSM));
+	</action>	
+	
+		
+</krpano>

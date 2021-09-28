@@ -1,0 +1,8 @@
+.con {
+  display: flex;
+  flex-direction: row;
+}
+
+.con > nav {
+  width: 50px;
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/index.css" />
+    <link href="css/tagEditorStyle.css" type="text/css" rel="stylesheet" />
+    <script src="https://static.matterport.com/showcase-sdk/2.0.1-0-g64e7e88/sdk.js"></script>
+
+    <title>Caitory 3D</title>
+  </head>
+  <body id="body-pd">
+    <div class="l-navbar" id="navbar">
+      <nav class="nav">
+        <div id="wrapper">
+          <div class="nav__brand">
+            <a href="#" class="nav__toggle" id="nav-toggle"><img src="assets/img/edit-icon-00.png" alt=""></a>
+            
+            <a href="#" class="nav__logo">Caitory</a>
+          </div>
+          <div id="test">
+          <div id="test1">
+          <div id="menu__wrapper">
+            <a href="#"><img class="smallImage" src="assets/img/edit-icon-01.png" alt=""></a>
+            <a href="#"><img class="smallImage" src="assets/img/edit-icon-02.png" alt=""></a>
+            <a href="#"><img class="smallImage" src="assets/img/edit-icon-03.png" alt=""></a>
+            <a href="#"><img class="smallImage" src="assets/img/edit-icon-04.png" alt=""></a>
+            <a href="#"><img class="smallImage" src="assets/img/edit-icon-05.png" alt=""></a>
+            <a href="#"><img class="smallImage" src="assets/img/edit-icon-06.png" alt=""></a>
+            <hr>
+            <a id="seeTags" href="#"><img class="smallImage" src="assets/img/edit-icon-07-r.png" alt=""></a>
+            <a href="#"><img class="smallImage" src="assets/img/edit-icon-08.png" alt=""></a>
+            <a href="#"><img class="smallImage" src="assets/img/edit-icon-09.png" alt=""></a>
+            <a href="#"><img class="smallImage" src="assets/img/edit-icon-10.png" alt=""></a>
+          </div>
+          </div>  
+          <div id="test2">
+          <div class="nav__list"></div>
+
+          <div id="edit">
+            <form id="editForm" action="">
+              <div>태그 이름</div>
+              <input id="tagName" type="text" />
+              <div>태그 설명</div>
+              <input id="tagDescription" type="text" />
+              <div id="imagePlus">
+                <div id="tmp1">이미지 추가</div>
+                <div id="tmp2">
+                  <button id="tmp3">+</button>
+                </div>
+              </div>
+              <input id="imageLink" type="text" />
+              <div id="imagePlus">
+                <div id="tmp1">비디오 추가</div>
+                <div id="tmp2">
+                  <button id="tmp3">+</button>
+                </div>
+              </div>
+              <input id="videoLink" type="text" />
+              <div class="add_tag__container">
+                <button class="add_tag">태그 추가</button>
+                <button type="button" id="editBtn">완료</button>
+              </div>
+            </form>
+          </div>
+          </div>
+        </div>
+        </div>
+        <div id="wrapper">
+          <!--<ul id="list"></ul>-->
+          <input type="file" id="sel-file" accept="image/*" />
+          <div class="tmp_Btn__wrapper">
+            <button id="tmp_Btn1">수정</button>
+            <button id="tmp_Btn2">삭제</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!--tagEditor-->
+    <div>
+      <div class="container">
+        <div class="showcase_container">
+          <iframe
+            class="showcase"
+            frameborder="0"
+            allow="xr-spatial-tracking; fullscreen"
+          ></iframe>
+          <div id="image-modal">
+            <div id="modal-title">
+              <input type="text" id="search-input">
+              <a href="#" ><img id="search-img" src="data:image/jpeg;base64,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" alt=""></a>
+            </div>
+            <div id="modal-body">
+              <div id="modal-sub__container">
+              <div class="modal-content__container">
+                  <div class="input__container">
+                    <input id="safe_image1" type="checkbox">
+                  </div>
+                  <div id="testt">
+                    <img class="modal-content__img" src="assets/img/safe_image1.JPG" alt="">
+                  </div>
+              </div>
+              <div class="modal-content__container">
+                <div class="input__container">
+                  <input id="safe_image2" type="checkbox">
+                </div>
+                <div id="testt">
+                  <img class="modal-content__img" src="assets/img/safe_image2.JPG" alt="">
+                </div>
+            </div>
+            <div class="modal-content__container">
+              <div class="input__container">
+                <input id="safe_image3" type="checkbox">
+              </div>
+              <div id="testt">
+                <img class="modal-content__img" src="assets/img/safe_image3.JPG" alt="">
+              </div>
+            </div>
+          </div>
+          <div id="modal-sub__container">
+            <div class="modal-content__container">
+                <div class="input__container">
+                  <input id="safe_image4" type="checkbox">
+                </div>
+                <div id="testt">
+                  <img class="modal-content__img" src="assets/img/safe_image4.JPG" alt="">
+                </div>
+            </div>
+            <div class="modal-content__container">
+              <div class="input__container">
+                <input id="safe_image5" type="checkbox">
+              </div>
+              <div id="testt">
+                <img class="modal-content__img" src="assets/img/safe_image5.JPG" alt="">
+              </div>
+          </div>
+          <div class="modal-content__container">
+            <div class="input__container">
+              <input id="safe_image6" type="checkbox">
+            </div>
+            <div id="testt">
+              <img class="modal-content__img" src="assets/img/safe_image6.JPG" alt="">
+            </div>
+          </div>
+        </div>
+        <div id="modal-submit">
+          <button class="modal-submit__button">완료</button>
+          <button class="modal-close__button">닫기</button>
+        </div>
+            </div>
+          </div>
+        </div>
+      <!--
+        <div class="button_container">
+          <button class="import_tags">Import tags</button>
+          <button class="remove_tags">Remove all tags</button>
+          <button class="add_tag">Place New Tag</button>
+          <button class="export_tags">Export tags</button>
+        </div>
+        <div class="tag_container">
+          <table class="scrollable">
+            <thead>
+              <tr>
+                <th align="left">Label</th>
+                <th align="left">Description</th>
+                <th align="left">Color</th>
+                <th align="left"></th>
+                <th align="left"></th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h3>선택한이미지 표시영역</h3>
+        <img id="print" src="" width="600" alt="선택한이미지 표시영역" />
+        <input type="file" id="sel-file" accept="image/*" />
+      </div>
+
+      <ul id="list"></ul>
+
+      <button id="testBtn">test button</button>
+      <button id="testBtn2">test button</button>
+    -->
+    </div>
+    <!--tagEditor-->
+
+    <!-- IONICONS -->
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <!-- JS -->
+    <script src="js/index.js"></script>
+    <script src="js/tagEditor.js" type="text/javascript"></script>
+  </body>
+</html>

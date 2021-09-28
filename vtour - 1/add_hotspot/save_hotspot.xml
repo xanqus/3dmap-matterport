@@ -1,0 +1,223 @@
+
+<krpano>
+
+	<include url="plugins_l/plugin_a/photo.xml"/>
+	<include url="plugins_l/plugin_a/youtube.xml"/>
+	<include url="plugins_l/plugin_a/video.xml"/>
+
+	<addhs_settings  pin_cod="3Y01" 
+ 					 sound_close_click="true" 
+ 					 video_close_click="true" 
+ 					 youtube_close_click="true" 
+					 FIRSTXML="tour" 
+					 path="%FIRSTXML%/" 
+					 action_list="'add_hotspot/plugins_l/actionSM.html'" 
+					 photo="true" 
+					 video="true" 
+					 youtube="true" 
+ 		   		/>
+	
+
+  <hotspot  name="hotspot_1" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/picture/icon05.png" enabled="false" visible="false" zorder="5"
+ 			ath="-143.1876" atv="16.5736" width="75" height="prop" edge="center"
+ 			install_onclick="15" title="hotspot_1" scene_EL="scene_1" fov_EL="120" enabled2="true" visible2="true" drag_hs="true" hs_linkedscene="scene_2"
+ 			onclick="loadscene(scene_2,null,MERGE,BLEND(0.5));"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+  <hotspot  name="hotspot_2" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/picture/icon05.png" enabled="false" visible="false" zorder="5"
+ 			ath="-22.0705" atv="20.9111" width="75" height="prop" edge="center"
+ 			install_onclick="15" title="hotspot_2" scene_EL="scene_2" fov_EL="140" enabled2="true" visible2="true" drag_hs="true" hs_linkedscene="scene_1"
+ 			onclick="loadscene(scene_1,null,MERGE,BLEND(0.5));"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+  <hotspot  name="hotspot_3" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/picture/icon05.png" enabled="false" visible="false" zorder="5"
+ 			ath="167.0436" atv="20.6353" width="75" height="prop" edge="center"
+ 			install_onclick="5" title="hotspot_3" scene_EL="scene_2" fov_EL="140" enabled2="true" visible2="true" drag_hs="true"
+ 			onclick="loadscene(scene_3,null,MERGE,BLEND(0.5));"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+  <hotspot  name="hotspot_4" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/picture/icon05.png" enabled="false" visible="false" zorder="5"
+ 			ath="49.6649" atv="16.0613" width="75" height="prop" edge="center"
+ 			install_onclick="15" title="hotspot_4" scene_EL="scene_3" fov_EL="140" enabled2="true" visible2="true" drag_hs="true" hs_linkedscene="scene_2"
+ 			onclick="loadscene(scene_2,null,MERGE,BLEND(0.5));"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+  <hotspot  name="hotspot_5" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/picture/icon05.png" enabled="false" visible="false" zorder="5"
+ 			ath="-141.6126" atv="23.4375" width="75" height="prop" edge="center"
+ 			install_onclick="15" title="hotspot_5" scene_EL="scene_3" fov_EL="135.01" enabled2="true" visible2="true" drag_hs="true" hs_linkedscene="scene_4"
+ 			onclick="loadscene(scene_4,null,MERGE,BLEND(0.5));"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+  <hotspot  name="hotspot_6" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/picture/icon05.png" enabled="false" visible="false" zorder="5"
+ 			ath="24.1168" atv="20.0567" width="75" height="prop" edge="center"
+ 			install_onclick="15" title="hotspot_6" scene_EL="scene_4" fov_EL="140" enabled2="true" visible2="true" drag_hs="true" hs_linkedscene="scene_3"
+ 			onclick="loadscene(scene_3,null,MERGE,BLEND(0.5));"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+  <hotspot  name="hotspot_7" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/picture/icon05.png" enabled="false" visible="false" zorder="5"
+ 			ath="-160.1084" atv="34.3136" width="75" height="prop" edge="center"
+ 			install_onclick="15" title="hotspot_7" scene_EL="scene_4" fov_EL="140" enabled2="true" visible2="true" drag_hs="true" hs_linkedscene="scene_5"
+ 			onclick="loadscene(scene_5,null,MERGE,BLEND(0.5));"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+  <hotspot  name="hotspot_8" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/picture/icon05.png" enabled="false" visible="false" zorder="5"
+ 			ath="-35.3044" atv="26.1001" width="75" height="prop" edge="center"
+ 			install_onclick="15" title="hotspot_8" scene_EL="scene_5" fov_EL="140" enabled2="true" visible2="true" drag_hs="true" hs_linkedscene="scene_4"
+ 			onclick="loadscene(scene_4,null,MERGE,BLEND(0.5));"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+  <hotspot  name="hotspot_9" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/picture/icon05.png" enabled="false" visible="false" zorder="5"
+ 			ath="160.535" atv="24.7902" width="75" height="prop" edge="center"
+ 			install_onclick="15" title="hotspot_9" scene_EL="scene_5" fov_EL="135.01" enabled2="true" visible2="true" drag_hs="true" hs_linkedscene="scene_7"
+ 			onclick="loadscene(scene_7,null,MERGE,BLEND(0.5));"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+  <hotspot  name="hotspot_10" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/picture/icon05.png" enabled="false" visible="false" zorder="5"
+ 			ath="131.8554" atv="34.0437" width="75" height="prop" edge="center"
+ 			install_onclick="15" title="hotspot_10" scene_EL="scene_6" fov_EL="120" enabled2="true" visible2="true" drag_hs="true" hs_linkedscene="scene_7"
+ 			onclick="loadscene(scene_7,null,MERGE,BLEND(0.5));"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+  <hotspot  name="hotspot_11" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/picture/icon07.png" enabled="false" visible="false" zorder="5"
+ 			ath="-129.4308" atv="21.6633" width="100" height="prop" edge="center"
+ 			install_onclick="15" title="hotspot_11" scene_EL="scene_7" fov_EL="138.18" enabled2="true" visible2="true" drag_hs="true" hs_linkedscene="scene_5"
+ 			onclick="loadscene(scene_5,null,MERGE,BLEND(0.5));"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+  <hotspot  name="hotspot_12" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/picture/icon05.png" enabled="false" visible="false" zorder="5"
+ 			ath="137.7252" atv="47.4952" width="75" height="prop" edge="center"
+ 			install_onclick="5" title="hotspot_12" scene_EL="scene_7" fov_EL="140" enabled2="true" visible2="true" drag_hs="true"
+ 			onclick="loadscene(scene_6,null,MERGE,BLEND(0.5));"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+  <hotspot  name="hotspot_13" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/picture/icon05.png" enabled="false" visible="false" zorder="5"
+ 			ath="-38.1398" atv="18.7341" width="75" height="prop" edge="center"
+ 			install_onclick="15" title="hotspot_13" scene_EL="scene_7" fov_EL="140" enabled2="true" visible2="true" drag_hs="true" hs_linkedscene="scene_8"
+ 			onclick="loadscene(scene_8,null,MERGE,BLEND(0.5));"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+  <hotspot  name="hotspot_14" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/picture/icon05.png" enabled="false" visible="false" zorder="5"
+ 			ath="164.739" atv="24.5724" width="75" height="prop" edge="center"
+ 			install_onclick="15" title="hotspot_14" scene_EL="scene_8" fov_EL="140" enabled2="true" visible2="true" drag_hs="true" hs_linkedscene="scene_7"
+ 			onclick="loadscene(scene_7,null,MERGE,BLEND(0.5));"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+  <hotspot  name="hotspot_15" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/picture/icon05.png" enabled="false" visible="false" zorder="5"
+ 			ath="51.0382" atv="20.8227" width="75" height="prop" edge="center"
+ 			install_onclick="15" title="hotspot_15" scene_EL="scene_5" fov_EL="140" enabled2="true" visible2="true" drag_hs="true" hs_linkedscene="scene_9"
+ 			onclick="loadscene(scene_9,null,MERGE,BLEND(0.5));"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+  <hotspot  name="hotspot_16" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/picture/icon05.png" enabled="false" visible="false" zorder="5"
+ 			ath="138.4005" atv="20.4177" width="75" height="prop" edge="center"
+ 			install_onclick="15" title="hotspot_16" scene_EL="scene_9" fov_EL="140" enabled2="true" visible2="true" drag_hs="true" hs_linkedscene="scene_5"
+ 			onclick="loadscene(scene_5,null,MERGE,BLEND(0.5));"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+  <hotspot  name="hotspot_17" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/picture/icon05.png" enabled="false" visible="false" zorder="5"
+ 			ath="125.7849" atv="15.7331" width="75" height="prop" edge="center"
+ 			install_onclick="15" title="hotspot_17" scene_EL="scene_10" fov_EL="120" enabled2="true" visible2="true" drag_hs="true" hs_linkedscene="scene_9"
+ 			onclick="loadscene(scene_9,null,MERGE,BLEND(0.5));"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+  <hotspot  name="hotspot_18" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/picture/icon05.png" enabled="false" visible="false" zorder="5"
+ 			ath="-71.1591" atv="25.0087" width="75" height="prop" edge="center"
+ 			install_onclick="15" title="hotspot_18" scene_EL="scene_9" fov_EL="140" enabled2="true" visible2="true" drag_hs="true" hs_linkedscene="scene_10"
+ 			onclick="loadscene(scene_10,null,MERGE,BLEND(0.5));"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+  <hotspot  name="hotspot_19" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/picture/icon01.png" distorted="true" enabled="false" visible="false" zorder="5"
+ 			ath="139.4743" atv="-8.3889" width="100" height="prop" edge="center"
+ 			install_onclick="6" title="hotspot_19" scene_EL="scene_1" info_Ah="20210707_120403_592.jpg" fov_EL="120" enabled2="true" visible2="true" drag_hs="true" tit_phot="0" phot_h="80"
+ 			onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/20210707_120403_592.jpg);"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+  <hotspot  name="hotspot_20" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/picture/icon01.png" distorted="true" enabled="false" visible="false" zorder="5"
+ 			ath="-37.902" atv="-14.3261" width="100" height="prop" edge="center"
+ 			install_onclick="7" title="hotspot_20" scene_EL="scene_1" info_Ah="비계작업_15s.mp4" fov_EL="120" enabled2="true" visible2="true" drag_hs="true"
+ 			volume_adhs="0.5" poster_Ah="0" loop="true" video_h="80"
+ 			onclick="looktohotspot(get(name),90); videoplayer_open(비계작업_15s.mp4,get(poster_Ah));"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+  <hotspot  name="hotspot_21" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/picture/icon05.png" zorder="5"
+ 			ath="-110.8234" atv="27.9357" width="100" height="prop" edge="center"
+ 			install_onclick="15" title="hotspot_21" scene_EL="scene_r0010185" fov_EL="120" enabled2="true" visible2="true" drag_hs="true" hs_linkedscene="scene_r0010186"
+ 			onclick="loadscene(scene_r0010186,null,MERGE,BLEND(0.5));"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+  <hotspot  name="hotspot_22" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/picture/icon05.png" enabled="false" visible="false" zorder="5"
+ 			ath="95.7124" atv="46.7329" width="100" height="prop" edge="center"
+ 			install_onclick="15" title="hotspot_22" scene_EL="scene_r0010186" fov_EL="120" enabled2="true" visible2="true" drag_hs="true" hs_linkedscene="scene_r0010185"
+ 			onclick="loadscene(scene_r0010185,null,MERGE,BLEND(0.5));"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+  <hotspot  name="hotspot_23" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/picture/icon01.png" enabled="false" visible="false" zorder="5"
+ 			ath="15.0551" atv="30.2108" width="100" height="prop" edge="center"
+ 			install_onclick="6" scene_EL="scene_r0010186" info_Ah="밀폐공간.JPG" fov_EL="120" enabled2="true" visible2="true" drag_hs="true" tit_phot="0" phot_h="80"
+ 			onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/밀폐공간.JPG);"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+  <hotspot  name="hotspot_24" style="link_hs_sm" type="image" keep="true" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" zorder="5"
+ 			ath="144.5703" atv="22.8617" width="100" height="prop" edge="center"
+ 			install_onclick="3" title="hotspot_24" scene_EL="scene_r0010185" info_Ah="https://docs.google.com/forms/d/10uoNzRgxrWow489cZsuwiq2-dZtTe_jvirhgs9wOKts/edit" fov_EL="120" enabled2="true" visible2="true" drag_hs="true"
+ 			onclick="iframe_add_hotspot(IFRAME_HTML, TARGET_LAYER_NAME,https://docs.google.com/forms/d/10uoNzRgxrWow489cZsuwiq2-dZtTe_jvirhgs9wOKts/edit);"
+			ondown="drag_LinkSM()"
+ 		/>
+	
+ <style name="pl_hs_add_hs"
+ 		keep="true"
+		enabled2="true"
+ 		visible2="true"
+ 		visible="false"
+ 		alpha="1"
+ 		alpha2="1"
+ 		capture="false"
+ 		handcursor="true"
+ 		zorder="0"
+ 		install_onclick="14"
+ 		fov_EL="90"
+ 		fillcolor="0x1500FF"
+ 		fillcolor2="0xE80606"
+ 		fillalpha="0.50"
+ 		fillalpha2="0.69"
+ 		borderwidth="5"
+ 		borderwidth2="4"
+ 		bordercolor="0xFF2B00"
+ 		bordercolor2="0xFFEE00"
+ 		borderalpha="1.00"
+ 		borderalpha2="1.00"
+ 		onover="set_pol_2(get(name));"
+ 		onout="set_pol_1(get(name));"
+ 		ondown="ondown_pl_hs();"
+ 		blendmode="normal"
+ 		group=""
+	 />
+
+	 <!-- polygonal hotspot -->
+
+
+ 
+</krpano>
